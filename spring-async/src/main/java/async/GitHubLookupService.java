@@ -26,8 +26,22 @@ public class GitHubLookupService {
     public CompletableFuture<User> findUser(String user) throws InterruptedException {
         logger.info("Looking up for User: " + user);
         String url = String.format("https://api.github.com/users/%s", user);
-        User results = restTemplate.getForObject(url, User.class);
-        Thread.sleep(1000);
+        User results = null;
+        try {
+            results = restTemplate.getForObject(url, User.class);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        Thread.sleep(2000);
         return CompletableFuture.completedFuture(results);
+    }
+
+
+    public User findUserSync(String user) throws InterruptedException {
+        logger.info("Looking up for User: " + user);
+        String url = String.format("https://api.github.com/users/%s", user);
+        User results = restTemplate.getForObject(url, User.class);
+        Thread.sleep(2000);
+        return results;
     }
 }
