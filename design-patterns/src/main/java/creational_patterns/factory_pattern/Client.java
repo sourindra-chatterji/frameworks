@@ -1,26 +1,26 @@
+package creational_patterns.factory_pattern;
+
 /**
  * Created by sourindra.chatterji on 25/02/18.
  */
 public class Client {
     public static void main(String[] args) {
-        ShapeFactory shapeFactory = new ShapeFactory();
-
-        Shape shape = shapeFactory.getShape("CIRCLE");
+        Shape shape = ShapeFactory.getShape("CIRCLE");
         if (shape != null){
             shape.draw();
         }
 
-        shape = shapeFactory.getShape("RECTANGLE");
+        shape = ShapeFactory.getShape("RECTANGLE");
         if (shape != null){
             shape.draw();
         }
 
-        shape = shapeFactory.getShape("SQUARE");
+        shape = ShapeFactory.getShape("SQUARE");
         if (shape != null){
             shape.draw();
         }
 
-        shape = shapeFactory.getShape("PYRAMID");
+        shape = ShapeFactory.getShape("PYRAMID");
         if (shape != null){
             shape.draw();
         }

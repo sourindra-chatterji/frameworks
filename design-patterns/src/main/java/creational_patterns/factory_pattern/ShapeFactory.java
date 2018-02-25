@@ -1,8 +1,10 @@
+package creational_patterns.factory_pattern;
+
 /**
  * Created by sourindra.chatterji on 25/02/18.
  */
 public class ShapeFactory {
-    public Shape getShape(String shape){
+    public static Shape getShape(String shape){
         if (shape.isEmpty()){
             return null;
         }
