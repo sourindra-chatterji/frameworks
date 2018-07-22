@@ -88,6 +88,7 @@
     <modules>
         <module>spring-async</module>
         <module>docker</module>
+        <module>spark</module>
     </modules>
 
     <build>
